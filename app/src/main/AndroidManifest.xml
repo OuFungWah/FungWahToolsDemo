@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".animdemo.activity.TweenActivity" />
         <activity android:name=".animdemo.activity.ValueAnimActivity" />
+        <activity android:name=".animdemo.activity.ObjectAnimatorActivity"/>
     </application>
 
 </manifest>

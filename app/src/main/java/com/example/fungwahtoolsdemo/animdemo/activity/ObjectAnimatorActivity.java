@@ -7,11 +7,6 @@ import com.example.fungwahtools.activity.BaseActivity;
 import com.example.fungwahtools.fragment.BaseFragment;
 import com.example.fungwahtoolsdemo.R;
 import com.example.fungwahtoolsdemo.animdemo.adapter.AnimFragmentAdapter;
-import com.example.fungwahtoolsdemo.animdemo.frament.Tween1Fragment;
-import com.example.fungwahtoolsdemo.animdemo.frament.Tween2Fragment;
-import com.example.fungwahtoolsdemo.animdemo.frament.Tween3Fragment;
-import com.example.fungwahtoolsdemo.animdemo.frament.Tween4Fragment;
-import com.example.fungwahtoolsdemo.animdemo.frament.Tween5Fragment;
 import com.example.fungwahtoolsdemo.animdemo.frament.Value1Fragment;
 import com.example.fungwahtoolsdemo.animdemo.frament.Value2Fragment;
 import com.example.fungwahtoolsdemo.animdemo.frament.Value3Fragment;
@@ -23,10 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by 区枫华 on 2017/9/7.
+ * Created by DiegoBrce on 2017/9/8.
  */
 
-public class ValueAnimActivity extends BaseActivity {
+public class ObjectAnimatorActivity extends BaseActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private List<BaseFragment> list = new ArrayList<>();
@@ -57,10 +52,8 @@ public class ValueAnimActivity extends BaseActivity {
     }
 
     private void addList() {
-        list.add(new Value1Fragment());
-        list.add(new Value2Fragment());
-        list.add(new Value3Fragment());
-        list.add(new Value4Fragment());
+        list.add(new Value5Fragment());
+        list.add(new Value6Fragment());
     }
 
     @Override

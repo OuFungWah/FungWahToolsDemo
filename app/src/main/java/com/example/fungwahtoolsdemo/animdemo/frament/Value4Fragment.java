@@ -3,6 +3,7 @@ package com.example.fungwahtoolsdemo.animdemo.frament;
 import android.animation.ValueAnimator;
 import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
@@ -67,10 +68,10 @@ public class Value4Fragment extends BaseFragment implements View.OnClickListener
         valueAnimator2.setDuration(30000);
         valueAnimator3.setDuration(30000);
         valueAnimator4.setDuration(30000);
-//        valueAnimator1.setInterpolator(new AccelerateInterpolator());
-//        valueAnimator2.setInterpolator(new DecelerateInterpolator());
-//        valueAnimator3.setInterpolator(new AccelerateInterpolator());
-//        valueAnimator4.setInterpolator(new AccelerateInterpolator());
+        valueAnimator1.setInterpolator(new AccelerateInterpolator());
+        valueAnimator2.setInterpolator(new DecelerateInterpolator());
+        valueAnimator3.setInterpolator(new AccelerateInterpolator());
+        valueAnimator4.setInterpolator(new AccelerateInterpolator());
         valueAnimator1.setRepeatCount(Integer.MAX_VALUE);
         valueAnimator2.setRepeatCount(Integer.MAX_VALUE);
         valueAnimator3.setRepeatCount(Integer.MAX_VALUE);
@@ -114,6 +115,7 @@ public class Value4Fragment extends BaseFragment implements View.OnClickListener
     @Override
     public void onAnimationUpdate(ValueAnimator animation) {
         float value1 = (float) valueAnimator1.getAnimatedValue();
+        Log.d("fragment4",""+value1);
         float value2 = (float) valueAnimator2.getAnimatedValue();
         float value3 = (float) valueAnimator3.getAnimatedValue();
         float value4 = (float) valueAnimator4.getAnimatedValue();

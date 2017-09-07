@@ -2,6 +2,7 @@ package com.example.fungwahtoolsdemo.animdemo.frament;
 
 import android.animation.ValueAnimator;
 import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
@@ -15,7 +16,7 @@ import com.example.fungwahtoolsdemo.R;
  * Created by 区枫华 on 2017/9/7.
  */
 
-public class Value1Fragment extends BaseFragment implements View.OnClickListener, ValueAnimator.AnimatorUpdateListener {
+public class Value1Fragment extends BaseFragment implements View.OnClickListener {
 
     private ImageView img;
     private ImageView img2;
@@ -76,10 +77,11 @@ public class Value1Fragment extends BaseFragment implements View.OnClickListener
         valueAnimator2.setRepeatMode(ValueAnimator.REVERSE);
         valueAnimator3.setRepeatMode(ValueAnimator.REVERSE);
         valueAnimator4.setRepeatMode(ValueAnimator.REVERSE);
-        valueAnimator1.addUpdateListener(this);
-        valueAnimator2.addUpdateListener(this);
-        valueAnimator3.addUpdateListener(this);
-        valueAnimator4.addUpdateListener(this);
+        MyOnAnimtionUpdateListener listener = new MyOnAnimtionUpdateListener();
+        valueAnimator1.addUpdateListener(listener);
+        valueAnimator2.addUpdateListener(listener);
+        valueAnimator3.addUpdateListener(listener);
+        valueAnimator4.addUpdateListener(listener);
     }
 
     @Override
@@ -108,16 +110,20 @@ public class Value1Fragment extends BaseFragment implements View.OnClickListener
         }
     }
 
-    @Override
-    public void onAnimationUpdate(ValueAnimator animation) {
-        float value1 = (float) valueAnimator1.getAnimatedValue();
-        float value2 = (float) valueAnimator2.getAnimatedValue();
-        float value3 = (float) valueAnimator3.getAnimatedValue();
-        float value4 = (float) valueAnimator4.getAnimatedValue();
-        img.setRotationY(value1);
-        img2.setRotationY(value2);
-        img3.setRotationY(value3);
-        img4.setRotationY(value4);
+    class MyOnAnimtionUpdateListener implements ValueAnimator.AnimatorUpdateListener{
+        @Override
+        public void onAnimationUpdate(ValueAnimator animation) {
+            float value1 = (float) valueAnimator1.getAnimatedValue();
+            Log.d("fragment1",""+value1);
+            float value2 = (float) valueAnimator2.getAnimatedValue();
+            float value3 = (float) valueAnimator3.getAnimatedValue();
+            float value4 = (float) valueAnimator4.getAnimatedValue();
+            img.setRotationY(value1);
+            img2.setRotationY(value2);
+            img3.setRotationY(value3);
+            img4.setRotationY(value4);
 
+        }
     }
+
 }

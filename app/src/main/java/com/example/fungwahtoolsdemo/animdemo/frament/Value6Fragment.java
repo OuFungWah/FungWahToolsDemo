@@ -21,6 +21,7 @@ import com.example.fungwahtoolsdemo.R;
 public class Value6Fragment extends BaseFragment implements View.OnClickListener {
 
     private static final int SET_GONE = 0;
+    private static final long ANIM_TIME = 500;
 
     private ImageView img;
     private FloatingActionButton floatingActionButton;
@@ -35,6 +36,14 @@ public class Value6Fragment extends BaseFragment implements View.OnClickListener
     private FloatingActionButton rotateYFAB;
     private AnimatorSet set = new AnimatorSet();
     private boolean flag = false;
+
+    private int transationX = 0;
+    private int transationY = 0;
+    private int scaleX = 1;
+    private int scaleY = 1;
+    private int rotate = 0;
+    private int rotateX = 0;
+    private int rotateY = 0;
 
     private Handler handler = new Handler(new Handler.Callback() {
         @Override
@@ -53,6 +62,19 @@ public class Value6Fragment extends BaseFragment implements View.OnClickListener
                     break;
             }
             return false;
+        }
+    });
+    private boolean isRunningAnim = false;
+
+    private Thread protectThread = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(ANIM_TIME);
+                isRunningAnim = false;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     });
 
@@ -97,88 +119,93 @@ public class Value6Fragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.fab:
-                if (flag) {
-                    btnHorizonDisappearAnim(leftFAB, 200);
-                    btnHorizonDisappearAnim(rightFAB, 100);
-                    btnHorizonDisappearAnim(upFAB, 400);
-                    btnHorizonDisappearAnim(downFAB, 300);
-                    btnVerticalDisappearAnim(rotateFAB, 300);
-                    btnVerticalDisappearAnim(rotateXFAB, 500);
-                    btnVerticalDisappearAnim(rotateYFAB, 400);
-                    btnVerticalDisappearAnim(enlargeFAB, 200);
-                    btnVerticalDisappearAnim(minifyFAB, 100);
-                    setAllClickable(false);
-                    flag = !flag;
-                } else {
-                    btnHorizonAppearAnim(leftFAB, 200);
-                    btnHorizonAppearAnim(rightFAB, 100);
-                    btnHorizonAppearAnim(upFAB, 400);
-                    btnHorizonAppearAnim(downFAB, 300);
-                    btnVerticalAppearAnim(rotateFAB, 300);
-                    btnVerticalAppearAnim(rotateXFAB, 500);
-                    btnVerticalAppearAnim(rotateYFAB, 400);
-                    btnVerticalAppearAnim(enlargeFAB, 200);
-                    btnVerticalAppearAnim(minifyFAB, 100);
-                    setAllClickable(true);
-                    flag = !flag;
-                }
-                break;
-            case R.id.fab_left:
-                ObjectAnimator.ofFloat(img, "translationX", -150).setDuration(500).start();
-                break;
-            case R.id.fab_right:
-                ObjectAnimator.ofFloat(img, "translationX", 150).setDuration(500).start();
-                break;
-            case R.id.fab_up:
-                ObjectAnimator.ofFloat(img, "translationY", -150).setDuration(500).start();
-                break;
-            case R.id.fab_enlarge:
-                set.cancel();
-                set.playTogether(ObjectAnimator.ofFloat(img, "scaleX", 1, 2), ObjectAnimator.ofFloat(img, "scaleY", 1, 2));
-                set.setDuration(500);
-                set.start();
-                break;
-            case R.id.fab_minify:
-                set.cancel();
-                set.playTogether(ObjectAnimator.ofFloat(img, "scaleX", 2, 1), ObjectAnimator.ofFloat(img, "scaleY", 2, 1));
-                set.setDuration(500);
-                set.start();
-                break;
-            case R.id.fab_square_turn:
-                ObjectAnimator.ofFloat(img, "rotation", 180).setDuration(500).start();
-                break;
-            case R.id.fab_x_turn:
-                ObjectAnimator.ofFloat(img, "rotationX", 180).setDuration(500).start();
-                break;
-            case R.id.fab_y_turn:
-                ObjectAnimator.ofFloat(img, "rotationY", 180).setDuration(500).start();
-                break;
-            case R.id.fab_down:
-                ObjectAnimator.ofFloat(img, "translationY", 150).setDuration(500).start();
-                break;
+        if (!isRunningAnim) {
+            isRunningAnim = true;
+            protectThread.start();
+            switch (v.getId()) {
+                case R.id.fab:
+                    //按钮展开和收起动画
+                    if (flag) {
+                        btnHorizonDisappearAnim(leftFAB, 200);
+                        btnHorizonDisappearAnim(rightFAB, 100);
+                        btnHorizonDisappearAnim(upFAB, 400);
+                        btnHorizonDisappearAnim(downFAB, 300);
+                        btnVerticalDisappearAnim(rotateFAB, 300);
+                        btnVerticalDisappearAnim(rotateXFAB, 500);
+                        btnVerticalDisappearAnim(rotateYFAB, 400);
+                        btnVerticalDisappearAnim(enlargeFAB, 200);
+                        btnVerticalDisappearAnim(minifyFAB, 100);
+                        setAllClickable(false);
+                        flag = !flag;
+                    } else {
+                        btnHorizonAppearAnim(leftFAB, 200);
+                        btnHorizonAppearAnim(rightFAB, 100);
+                        btnHorizonAppearAnim(upFAB, 400);
+                        btnHorizonAppearAnim(downFAB, 300);
+                        btnVerticalAppearAnim(rotateFAB, 300);
+                        btnVerticalAppearAnim(rotateXFAB, 500);
+                        btnVerticalAppearAnim(rotateYFAB, 400);
+                        btnVerticalAppearAnim(enlargeFAB, 200);
+                        btnVerticalAppearAnim(minifyFAB, 100);
+                        setAllClickable(true);
+                        flag = !flag;
+                    }
+                    break;
+                case R.id.fab_left:
+                    ObjectAnimator.ofFloat(img, "translationX", transationX, transationX -= 100).setDuration(ANIM_TIME).start();
+                    break;
+                case R.id.fab_right:
+                    ObjectAnimator.ofFloat(img, "translationX", transationX, transationX += 100).setDuration(ANIM_TIME).start();
+                    break;
+                case R.id.fab_up:
+                    ObjectAnimator.ofFloat(img, "translationY", transationY, transationY -= 100).setDuration(ANIM_TIME).start();
+                    break;
+                case R.id.fab_enlarge:
+                    set.cancel();
+                    set.playTogether(ObjectAnimator.ofFloat(img, "scaleX", scaleX, scaleX += 1), ObjectAnimator.ofFloat(img, "scaleY", scaleY, scaleY += 1));
+                    set.setDuration(ANIM_TIME);
+                    set.start();
+                    break;
+                case R.id.fab_minify:
+                    set.cancel();
+                    set.playTogether(ObjectAnimator.ofFloat(img, "scaleX", scaleX, scaleX -= 1), ObjectAnimator.ofFloat(img, "scaleY", scaleY, scaleY -= 1));
+                    set.setDuration(ANIM_TIME);
+                    set.start();
+                    break;
+                case R.id.fab_square_turn:
+                    ObjectAnimator.ofFloat(img, "rotation", rotate += 180).setDuration(ANIM_TIME).start();
+                    break;
+                case R.id.fab_x_turn:
+                    ObjectAnimator.ofFloat(img, "rotationX", rotateX += 180).setDuration(ANIM_TIME).start();
+                    break;
+                case R.id.fab_y_turn:
+                    ObjectAnimator.ofFloat(img, "rotationY", rotateY += 180).setDuration(ANIM_TIME).start();
+                    break;
+                case R.id.fab_down:
+                    ObjectAnimator.ofFloat(img, "translationY", transationY, transationY += 100).setDuration(ANIM_TIME).start();
+                    break;
+            }
         }
     }
 
     protected void btnHorizonAppearAnim(View view, int distance) {
-        ObjectAnimator.ofFloat(view, "alpha", 0, 1).setDuration(500).start();
-        ObjectAnimator.ofFloat(view, "translationX", distance, 0).setDuration(500).start();
+        ObjectAnimator.ofFloat(view, "alpha", 0, 1).setDuration(ANIM_TIME).start();
+        ObjectAnimator.ofFloat(view, "translationX", distance, 0).setDuration(ANIM_TIME).start();
     }
 
     protected void btnVerticalAppearAnim(View view, int distance) {
-        ObjectAnimator.ofFloat(view, "alpha", 0, 1).setDuration(500).start();
-        ObjectAnimator.ofFloat(view, "translationY", distance, 0).setDuration(500).start();
+        ObjectAnimator.ofFloat(view, "alpha", 0, 1).setDuration(ANIM_TIME).start();
+        ObjectAnimator.ofFloat(view, "translationY", distance, 0).setDuration(ANIM_TIME).start();
     }
 
     protected void btnHorizonDisappearAnim(View view, int distance) {
-        ObjectAnimator.ofFloat(view, "alpha", 1, 0).setDuration(500).start();
-        ObjectAnimator.ofFloat(view, "translationX", 0, distance).setDuration(500).start();
+        ObjectAnimator.ofFloat(view, "alpha", 1, 0).setDuration(ANIM_TIME).start();
+        ObjectAnimator.ofFloat(view, "translationX", 0, distance).setDuration(ANIM_TIME).start();
     }
 
     protected void btnVerticalDisappearAnim(View view, int distance) {
-        ObjectAnimator.ofFloat(view, "alpha", 1, 0).setDuration(500).start();
-        ObjectAnimator.ofFloat(view, "translationY", 0, distance).setDuration(500).start();
+        ObjectAnimator.ofFloat(view, "alpha", 1, 0).setDuration(ANIM_TIME).start();
+        ObjectAnimator.ofFloat(view, "translationY", 0, distance).setDuration(ANIM_TIME).start();
     }
 
     protected void setAllClickable(final boolean flag) {
@@ -206,7 +233,7 @@ public class Value6Fragment extends BaseFragment implements View.OnClickListener
                 @Override
                 public void run() {
                     try {
-                        Thread.sleep(500);
+                        Thread.sleep(ANIM_TIME);
                         if (!flag) {
                             handler.sendEmptyMessage(SET_GONE);
                         }
