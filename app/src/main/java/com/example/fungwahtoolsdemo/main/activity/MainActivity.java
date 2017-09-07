@@ -12,6 +12,7 @@ import com.example.fungwahtools.activity.BaseActivity;
 import com.example.fungwahtools.fragment.BaseFragment;
 import com.example.fungwahtoolsdemo.R;
 import com.example.fungwahtoolsdemo.animdemo.activity.TweenActivity;
+import com.example.fungwahtoolsdemo.animdemo.activity.ValueAnimActivity;
 import com.example.fungwahtoolsdemo.animdemo.adapter.AnimFragmentAdapter;
 import com.example.fungwahtoolsdemo.animdemo.frament.Tween1Fragment;
 import com.example.fungwahtoolsdemo.animdemo.frament.Tween2Fragment;
@@ -32,8 +33,8 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     private List<MainItem> list = new ArrayList<>();
     private Random random = new Random();
 
-    private static final String TITLE[] = {"Tween动画"};
-    private static final Class ACTIVITIES[] = {TweenActivity.class};
+    private static final String TITLE[] = {"Tween动画","属性动画"};
+    private static final Class ACTIVITIES[] = {TweenActivity.class, ValueAnimActivity.class};
     private static final int BACKGROUND_ID[] = {R.drawable.holo_blue_bg, R.drawable.holo_green_bg, R.drawable.holo_orange_bg, R.drawable.holo_purple_bg, R.drawable.holo_red_bg};
 
     @Override

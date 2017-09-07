@@ -12,21 +12,26 @@ import com.example.fungwahtoolsdemo.animdemo.frament.Tween2Fragment;
 import com.example.fungwahtoolsdemo.animdemo.frament.Tween3Fragment;
 import com.example.fungwahtoolsdemo.animdemo.frament.Tween4Fragment;
 import com.example.fungwahtoolsdemo.animdemo.frament.Tween5Fragment;
+import com.example.fungwahtoolsdemo.animdemo.frament.Value1Fragment;
+import com.example.fungwahtoolsdemo.animdemo.frament.Value2Fragment;
+import com.example.fungwahtoolsdemo.animdemo.frament.Value3Fragment;
+import com.example.fungwahtoolsdemo.animdemo.frament.Value4Fragment;
+import com.example.fungwahtoolsdemo.animdemo.frament.Value5Fragment;
+import com.example.fungwahtoolsdemo.animdemo.frament.Value6Fragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by 区枫华 on 2017/9/6.
+ * Created by 区枫华 on 2017/9/7.
  */
 
-public class TweenActivity extends BaseActivity {
-
+public class ValueAnimActivity extends BaseActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private List<BaseFragment> list = new ArrayList<>();
     private AnimFragmentAdapter adapter;
-    private static final String TAB_NAME[] = {"Tween透明度", "Tween旋转", "Tween大小", "Tween复合动画", "Tween位移", "Tween6", "Tween7", "Tween8", "Tween9", "Tween10"};
+    private static final String TAB_NAME[] = {"ValueAnimator_Y轴旋转", "ValueAnimator_X轴旋转", "ValueAnimator_平面旋转", "ValueAnimator_实现数字动画", "ValueAnimator_xml配置", "ObjectAnimator", "Tween7", "Tween8", "Tween9", "Tween10"};
 
     @Override
     protected int setLayoutId() {
@@ -47,20 +52,21 @@ public class TweenActivity extends BaseActivity {
         }
         adapter = new AnimFragmentAdapter(list, TAB_NAME, getSupportFragmentManager());
         viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(list.size());
         tabLayout.setupWithViewPager(viewPager, true);
     }
 
     private void addList() {
-        list.add(new Tween1Fragment());
-        list.add(new Tween2Fragment());
-        list.add(new Tween3Fragment());
-        list.add(new Tween4Fragment());
-        list.add(new Tween5Fragment());
+        list.add(new Value1Fragment());
+        list.add(new Value2Fragment());
+        list.add(new Value3Fragment());
+        list.add(new Value4Fragment());
+        list.add(new Value5Fragment());
+        list.add(new Value6Fragment());
     }
 
     @Override
     protected void initListener() {
 
     }
-
 }

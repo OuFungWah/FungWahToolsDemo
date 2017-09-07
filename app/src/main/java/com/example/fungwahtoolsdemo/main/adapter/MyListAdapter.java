@@ -6,11 +6,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.view.View;
 
-import com.example.fungwahtools.activity.BaseActivity;
 import com.example.fungwahtools.adapter.BaseListAdapter;
-import com.example.fungwahtools.bean.ListViewHolder;
 import com.example.fungwahtoolsdemo.R;
-import com.example.fungwahtoolsdemo.main.activity.MainActivity;
 import com.example.fungwahtoolsdemo.main.bean.MainItem;
 import com.example.fungwahtoolsdemo.main.bean.MainViewHolder;
 

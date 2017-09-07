@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".animdemo.activity.TweenActivity" />
+        <activity android:name=".animdemo.activity.ValueAnimActivity" />
     </application>
 
 </manifest>
