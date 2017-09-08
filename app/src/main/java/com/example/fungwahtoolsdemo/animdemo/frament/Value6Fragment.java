@@ -22,6 +22,8 @@ public class Value6Fragment extends BaseFragment implements View.OnClickListener
 
     private static final int SET_GONE = 0;
     private static final long ANIM_TIME = 500;
+    private static final int DISTANCE = 165;
+    private static final float ALPHA_DISAPPEAR = 0.0f;
 
     private ImageView img;
     private FloatingActionButton floatingActionButton;
@@ -39,8 +41,8 @@ public class Value6Fragment extends BaseFragment implements View.OnClickListener
 
     private int transationX = 0;
     private int transationY = 0;
-    private int scaleX = 1;
-    private int scaleY = 1;
+    private float scaleX = 1;
+    private float scaleY = 1;
     private int rotate = 0;
     private int rotateX = 0;
     private int rotateY = 0;
@@ -65,18 +67,6 @@ public class Value6Fragment extends BaseFragment implements View.OnClickListener
         }
     });
     private boolean isRunningAnim = false;
-
-    private Thread protectThread = new Thread(new Runnable() {
-        @Override
-        public void run() {
-            try {
-                Thread.sleep(ANIM_TIME);
-                isRunningAnim = false;
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    });
 
     @Override
     protected int setLayoutId() {
@@ -121,32 +111,45 @@ public class Value6Fragment extends BaseFragment implements View.OnClickListener
     public void onClick(View v) {
         if (!isRunningAnim) {
             isRunningAnim = true;
-            protectThread.start();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(ANIM_TIME);
+                        isRunningAnim = false;
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
             switch (v.getId()) {
                 case R.id.fab:
                     //按钮展开和收起动画
+
                     if (flag) {
-                        btnHorizonDisappearAnim(leftFAB, 200);
-                        btnHorizonDisappearAnim(rightFAB, 100);
-                        btnHorizonDisappearAnim(upFAB, 400);
-                        btnHorizonDisappearAnim(downFAB, 300);
-                        btnVerticalDisappearAnim(rotateFAB, 300);
-                        btnVerticalDisappearAnim(rotateXFAB, 500);
-                        btnVerticalDisappearAnim(rotateYFAB, 400);
-                        btnVerticalDisappearAnim(enlargeFAB, 200);
-                        btnVerticalDisappearAnim(minifyFAB, 100);
+                        ObjectAnimator.ofFloat(floatingActionButton,"rotation",720,0).setDuration(ANIM_TIME).start();
+                        btnHorizonDisappearAnim(leftFAB, 2*DISTANCE);
+                        btnHorizonDisappearAnim(rightFAB, 1*DISTANCE);
+                        btnHorizonDisappearAnim(upFAB, 4*DISTANCE);
+                        btnHorizonDisappearAnim(downFAB, 3*DISTANCE);
+                        btnVerticalDisappearAnim(rotateFAB, 3*DISTANCE);
+                        btnVerticalDisappearAnim(rotateXFAB, 5*DISTANCE);
+                        btnVerticalDisappearAnim(rotateYFAB, 4*DISTANCE);
+                        btnVerticalDisappearAnim(enlargeFAB, 2*DISTANCE);
+                        btnVerticalDisappearAnim(minifyFAB, 1*DISTANCE);
                         setAllClickable(false);
                         flag = !flag;
                     } else {
-                        btnHorizonAppearAnim(leftFAB, 200);
-                        btnHorizonAppearAnim(rightFAB, 100);
-                        btnHorizonAppearAnim(upFAB, 400);
-                        btnHorizonAppearAnim(downFAB, 300);
-                        btnVerticalAppearAnim(rotateFAB, 300);
-                        btnVerticalAppearAnim(rotateXFAB, 500);
-                        btnVerticalAppearAnim(rotateYFAB, 400);
-                        btnVerticalAppearAnim(enlargeFAB, 200);
-                        btnVerticalAppearAnim(minifyFAB, 100);
+                        ObjectAnimator.ofFloat(floatingActionButton,"rotation",0,720).setDuration(ANIM_TIME).start();
+                        btnHorizonAppearAnim(leftFAB, 2*DISTANCE);
+                        btnHorizonAppearAnim(rightFAB, 1*DISTANCE);
+                        btnHorizonAppearAnim(upFAB, 4*DISTANCE);
+                        btnHorizonAppearAnim(downFAB, 3*DISTANCE);
+                        btnVerticalAppearAnim(rotateFAB, 3*DISTANCE);
+                        btnVerticalAppearAnim(rotateXFAB, 5*DISTANCE);
+                        btnVerticalAppearAnim(rotateYFAB, 4*DISTANCE);
+                        btnVerticalAppearAnim(enlargeFAB, 2*DISTANCE);
+                        btnVerticalAppearAnim(minifyFAB, 1*DISTANCE);
                         setAllClickable(true);
                         flag = !flag;
                     }
@@ -161,16 +164,20 @@ public class Value6Fragment extends BaseFragment implements View.OnClickListener
                     ObjectAnimator.ofFloat(img, "translationY", transationY, transationY -= 100).setDuration(ANIM_TIME).start();
                     break;
                 case R.id.fab_enlarge:
-                    set.cancel();
-                    set.playTogether(ObjectAnimator.ofFloat(img, "scaleX", scaleX, scaleX += 1), ObjectAnimator.ofFloat(img, "scaleY", scaleY, scaleY += 1));
-                    set.setDuration(ANIM_TIME);
-                    set.start();
+                    if (scaleX + 0.5 <= 10) {
+                        set.cancel();
+                        set.playTogether(ObjectAnimator.ofFloat(img, "scaleX", scaleX, scaleX += 0.5), ObjectAnimator.ofFloat(img, "scaleY", scaleY, scaleY += 0.5));
+                        set.setDuration(ANIM_TIME);
+                        set.start();
+                    }
                     break;
                 case R.id.fab_minify:
-                    set.cancel();
-                    set.playTogether(ObjectAnimator.ofFloat(img, "scaleX", scaleX, scaleX -= 1), ObjectAnimator.ofFloat(img, "scaleY", scaleY, scaleY -= 1));
-                    set.setDuration(ANIM_TIME);
-                    set.start();
+                    if (scaleX - 0.5 >= 0.5) {
+                        set.cancel();
+                        set.playTogether(ObjectAnimator.ofFloat(img, "scaleX", scaleX, scaleX -= 0.5), ObjectAnimator.ofFloat(img, "scaleY", scaleY, scaleY -= 0.5));
+                        set.setDuration(ANIM_TIME);
+                        set.start();
+                    }
                     break;
                 case R.id.fab_square_turn:
                     ObjectAnimator.ofFloat(img, "rotation", rotate += 180).setDuration(ANIM_TIME).start();
@@ -189,22 +196,22 @@ public class Value6Fragment extends BaseFragment implements View.OnClickListener
     }
 
     protected void btnHorizonAppearAnim(View view, int distance) {
-        ObjectAnimator.ofFloat(view, "alpha", 0, 1).setDuration(ANIM_TIME).start();
+        ObjectAnimator.ofFloat(view, "alpha", ALPHA_DISAPPEAR, 1.0f).setDuration(ANIM_TIME).start();
         ObjectAnimator.ofFloat(view, "translationX", distance, 0).setDuration(ANIM_TIME).start();
     }
 
     protected void btnVerticalAppearAnim(View view, int distance) {
-        ObjectAnimator.ofFloat(view, "alpha", 0, 1).setDuration(ANIM_TIME).start();
+        ObjectAnimator.ofFloat(view, "alpha",  ALPHA_DISAPPEAR, 1.0f).setDuration(ANIM_TIME).start();
         ObjectAnimator.ofFloat(view, "translationY", distance, 0).setDuration(ANIM_TIME).start();
     }
 
     protected void btnHorizonDisappearAnim(View view, int distance) {
-        ObjectAnimator.ofFloat(view, "alpha", 1, 0).setDuration(ANIM_TIME).start();
+        ObjectAnimator.ofFloat(view, "alpha", 1.0f, ALPHA_DISAPPEAR).setDuration(ANIM_TIME).start();
         ObjectAnimator.ofFloat(view, "translationX", 0, distance).setDuration(ANIM_TIME).start();
     }
 
     protected void btnVerticalDisappearAnim(View view, int distance) {
-        ObjectAnimator.ofFloat(view, "alpha", 1, 0).setDuration(ANIM_TIME).start();
+        ObjectAnimator.ofFloat(view, "alpha",1.0f, ALPHA_DISAPPEAR).setDuration(ANIM_TIME).start();
         ObjectAnimator.ofFloat(view, "translationY", 0, distance).setDuration(ANIM_TIME).start();
     }
 

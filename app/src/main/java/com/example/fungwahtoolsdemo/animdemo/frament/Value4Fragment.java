@@ -115,7 +115,7 @@ public class Value4Fragment extends BaseFragment implements View.OnClickListener
     @Override
     public void onAnimationUpdate(ValueAnimator animation) {
         float value1 = (float) valueAnimator1.getAnimatedValue();
-        Log.d("fragment4",""+value1);
+//        Log.d("fragment4",""+value1);
         float value2 = (float) valueAnimator2.getAnimatedValue();
         float value3 = (float) valueAnimator3.getAnimatedValue();
         float value4 = (float) valueAnimator4.getAnimatedValue();

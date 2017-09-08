@@ -78,6 +78,21 @@ public class Value1Fragment extends BaseFragment implements View.OnClickListener
         valueAnimator3.setRepeatMode(ValueAnimator.REVERSE);
         valueAnimator4.setRepeatMode(ValueAnimator.REVERSE);
         MyOnAnimtionUpdateListener listener = new MyOnAnimtionUpdateListener();
+
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(200.0f, 300.0f);
+        //设置动画运行时间为1000ms,即一秒
+        valueAnimator.setDuration(1000);
+        //设置动画重复的模式为倒转动画效果重新跑一次动画
+        valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        //设置动画重复的次数为无限次
+        valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        //设置动画中值的变化速率为逐渐加速
+        valueAnimator.setInterpolator(new AccelerateInterpolator());
+        //设置值的变化范围为300.0到200.0
+        valueAnimator.setFloatValues(300.0f, 200.0f);
+        //设置在1000ms(1秒)延迟后再开始
+        valueAnimator.setStartDelay(1000);
+
         valueAnimator1.addUpdateListener(listener);
         valueAnimator2.addUpdateListener(listener);
         valueAnimator3.addUpdateListener(listener);
@@ -110,11 +125,11 @@ public class Value1Fragment extends BaseFragment implements View.OnClickListener
         }
     }
 
-    class MyOnAnimtionUpdateListener implements ValueAnimator.AnimatorUpdateListener{
+    class MyOnAnimtionUpdateListener implements ValueAnimator.AnimatorUpdateListener {
         @Override
         public void onAnimationUpdate(ValueAnimator animation) {
             float value1 = (float) valueAnimator1.getAnimatedValue();
-            Log.d("fragment1",""+value1);
+//            Log.d("fragment1",""+value1);
             float value2 = (float) valueAnimator2.getAnimatedValue();
             float value3 = (float) valueAnimator3.getAnimatedValue();
             float value4 = (float) valueAnimator4.getAnimatedValue();
