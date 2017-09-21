@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.example.fungwahtools.activity.BaseActivity;
 import com.example.fungwahtools.fragment.BaseFragment;
 import com.example.fungwahtoolsdemo.R;
+import com.example.fungwahtoolsdemo.animdemo.activity.LollipopAnimationActivity;
 import com.example.fungwahtoolsdemo.animdemo.activity.ObjectAnimatorActivity;
 import com.example.fungwahtoolsdemo.animdemo.activity.TweenActivity;
 import com.example.fungwahtoolsdemo.animdemo.activity.ValueAnimActivity;
@@ -34,12 +35,12 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     private List<MainItem> list = new ArrayList<>();
     private Random random = new Random();
 
-    private static final String TITLE[] = {"Tween动画","属性动画","Animator动画"};
-    private static final Class ACTIVITIES[] = {TweenActivity.class, ValueAnimActivity.class, ObjectAnimatorActivity.class};
+    private static final String TITLE[] = {"Tween动画", "属性动画", "Animator动画", "Lollipop动画"};
+    private static final Class ACTIVITIES[] = {TweenActivity.class, ValueAnimActivity.class, ObjectAnimatorActivity.class, LollipopAnimationActivity.class};
     private static final int BACKGROUND_ID[] = {R.drawable.holo_blue_bg, R.drawable.holo_green_bg, R.drawable.holo_orange_bg, R.drawable.holo_purple_bg, R.drawable.holo_red_bg};
 
     @Override
-    protected int setLayoutId() {
+    protected int getLayoutId() {
         return R.layout.main_activity;
     }
 

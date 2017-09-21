@@ -94,7 +94,7 @@ public class Value6Fragment extends BaseFragment implements View.OnClickListener
     }
 
     @Override
-    protected void initOnClickListener() {
+    protected void initListener() {
         floatingActionButton.setOnClickListener(this);
         leftFAB.setOnClickListener(this);
         rightFAB.setOnClickListener(this);

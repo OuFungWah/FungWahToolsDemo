@@ -31,10 +31,10 @@ public class ValueAnimActivity extends BaseActivity {
     private TabLayout tabLayout;
     private List<BaseFragment> list = new ArrayList<>();
     private AnimFragmentAdapter adapter;
-    private static final String TAB_NAME[] = {"ValueAnimator_Y轴旋转", "ValueAnimator_X轴旋转", "ValueAnimator_平面旋转", "ValueAnimator_实现数字动画", "ValueAnimator_xml配置", "ObjectAnimator", "Tween7", "Tween8", "Tween9", "Tween10"};
+    private static final String TAB_NAME[] = {"ValueAnimator_Y轴旋转", "ValueAnimator_X轴旋转", "ValueAnimator_平面旋转", "ValueAnimator_实现数字动画", "ValueAnimator_xml配置", "帧动画", "Tween7", "Tween8", "Tween9", "Tween10"};
 
     @Override
-    protected int setLayoutId() {
+    protected int getLayoutId() {
         return R.layout.anim_main_activity;
     }
 

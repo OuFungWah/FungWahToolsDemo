@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:transitionName="view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:text="Explode"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:transitionName="tv" />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="330dp"
+        android:text="btn1" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="390dp"
+        android:text="btn2" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="175dp"
+        android:src="@mipmap/icon"
+        android:transitionName="img" />
+
+</RelativeLayout>

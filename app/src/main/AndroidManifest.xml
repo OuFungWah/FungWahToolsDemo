@@ -3,6 +3,7 @@
     package="com.example.fungwahtoolsdemo">
 
     <application
+        android:name=".application.FungWahApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,6 +20,13 @@
         <activity android:name=".animdemo.activity.TweenActivity" />
         <activity android:name=".animdemo.activity.ValueAnimActivity" />
         <activity android:name=".animdemo.activity.ObjectAnimatorActivity"/>
+        <activity android:name=".animdemo.activity.LollipopAnimationActivity"/>
+
+        <activity android:name=".animdemo.activity.ExplodeActivity"/>
+        <activity android:name=".animdemo.activity.SlideActivity"/>
+        <activity android:name=".animdemo.activity.FadeActivity"/>
+        <activity android:name=".animdemo.activity.ShareActivity"/>
+
     </application>
 
 </manifest>

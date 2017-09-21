@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:orientation="vertical">
+        <!--Explode、Slide、Fade、Share-->
+        <Button
+            android:id="@+id/explode_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EXPLODE"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/slide_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SLIDE"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/fade_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FADE"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/share_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SHARE"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/share_btn"
+            android:transitionName="view" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:src="@mipmap/icon"
+        android:transitionName="img" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="75dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="25dp"
+        android:layout_marginBottom="15dp"
+        android:text="Share"
+        android:textSize="20sp"
+        android:transitionName="tv" />
+
+</RelativeLayout>

@@ -37,7 +37,7 @@ public class Tween5Fragment extends BaseFragment implements View.OnClickListener
     }
 
     @Override
-    protected void initOnClickListener() {
+    protected void initListener() {
         floatingActionButton.setOnClickListener(this);
     }
 

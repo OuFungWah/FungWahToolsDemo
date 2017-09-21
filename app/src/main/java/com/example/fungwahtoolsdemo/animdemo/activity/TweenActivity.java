@@ -29,7 +29,7 @@ public class TweenActivity extends BaseActivity {
     private static final String TAB_NAME[] = {"Tween透明度", "Tween旋转", "Tween大小", "Tween复合动画", "Tween位移", "Tween6", "Tween7", "Tween8", "Tween9", "Tween10"};
 
     @Override
-    protected int setLayoutId() {
+    protected int getLayoutId() {
         return R.layout.anim_main_activity;
     }
 

@@ -15,7 +15,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(setLayoutId());
+        setContentView(getLayoutId());
         initView();
         setView();
         initListener();
@@ -26,7 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      *
      * @return 返回 xml Id
      */
-    protected abstract int setLayoutId();
+    protected abstract int getLayoutId();
 
     /**
      * 初始化控件

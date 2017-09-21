@@ -23,7 +23,7 @@ public abstract class BaseFragment extends Fragment {
         view = inflater.inflate(setLayoutId(), container, false);
         initView(view);
         setView();
-        initOnClickListener();
+        initListener();
         return view;
     }
 
@@ -49,7 +49,7 @@ public abstract class BaseFragment extends Fragment {
     /**
      * 初始化监听器
      */
-    protected abstract void initOnClickListener();
+    protected abstract void initListener();
 
     /**
      * 简化关联控件

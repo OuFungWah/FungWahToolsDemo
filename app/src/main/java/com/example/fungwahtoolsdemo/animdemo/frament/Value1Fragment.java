@@ -100,7 +100,7 @@ public class Value1Fragment extends BaseFragment implements View.OnClickListener
     }
 
     @Override
-    protected void initOnClickListener() {
+    protected void initListener() {
         fab.setOnClickListener(this);
     }
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/paobu1" android:duration="40"/>
+    <item android:drawable="@drawable/paobu2" android:duration="40"/>
+    <item android:drawable="@drawable/paobu3" android:duration="40"/>
+    <item android:drawable="@drawable/paobu4" android:duration="40"/>
+    <item android:drawable="@drawable/paobu5" android:duration="40"/>
+    <item android:drawable="@drawable/paobu6" android:duration="40"/>
+    <item android:drawable="@drawable/paobu7" android:duration="40"/>
+    <item android:drawable="@drawable/paobu8" android:duration="40"/>
+    <item android:drawable="@drawable/paobu9" android:duration="40"/>
+    <item android:drawable="@drawable/paobu10" android:duration="40"/>
+    <item android:drawable="@drawable/paobu11" android:duration="40"/>
+    <item android:drawable="@drawable/paobu12" android:duration="40"/>
+    <item android:drawable="@drawable/paobu13" android:duration="40"/>
+    <item android:drawable="@drawable/paobu14" android:duration="40"/>
+    <item android:drawable="@drawable/paobu15" android:duration="40"/>
+    <item android:drawable="@drawable/paobu16" android:duration="40"/>
+    <item android:drawable="@drawable/paobu17" android:duration="40"/>
+    <item android:drawable="@drawable/paobu18" android:duration="40"/>
+    <item android:drawable="@drawable/paobu19" android:duration="40"/>
+    <item android:drawable="@drawable/paobu20" android:duration="40"/>
+    <item android:drawable="@drawable/paobu21" android:duration="40"/>
+    <item android:drawable="@drawable/paobu22" android:duration="40"/>
+    <item android:drawable="@drawable/paobu23" android:duration="40"/>
+    <item android:drawable="@drawable/paobu24" android:duration="40"/>
+    <item android:drawable="@drawable/paobu25" android:duration="40"/>
+</animation-list>

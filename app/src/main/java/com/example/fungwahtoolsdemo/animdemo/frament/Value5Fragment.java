@@ -36,7 +36,7 @@ public class Value5Fragment extends BaseFragment implements View.OnClickListener
     }
 
     @Override
-    protected void initOnClickListener() {
+    protected void initListener() {
         floatingActionButton.setOnClickListener(this);
     }
 
