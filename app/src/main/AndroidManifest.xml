@@ -22,10 +22,12 @@
         <activity android:name=".animdemo.activity.ObjectAnimatorActivity"/>
         <activity android:name=".animdemo.activity.LollipopAnimationActivity"/>
 
-        <activity android:name=".animdemo.activity.ExplodeActivity"/>
-        <activity android:name=".animdemo.activity.SlideActivity"/>
-        <activity android:name=".animdemo.activity.FadeActivity"/>
-        <activity android:name=".animdemo.activity.ShareActivity"/>
+        <activity android:name=".animdemo.activity.court1.ExplodeActivity"/>
+        <activity android:name=".animdemo.activity.court1.SlideActivity"/>
+        <activity android:name=".animdemo.activity.court1.FadeActivity"/>
+        <activity android:name=".animdemo.activity.court1.ShareActivity"/>
+
+        <activity android:name=".animdemo.activity.court2.TweenTestAnimActivity"/>
 
     </application>
 

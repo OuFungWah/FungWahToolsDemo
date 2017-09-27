@@ -1,10 +1,9 @@
-package com.example.fungwahtoolsdemo.animdemo.activity;
+package com.example.fungwahtoolsdemo.animdemo.activity.court1;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.transition.Fade;
-import android.widget.TextView;
+import android.transition.Explode;
 
 import com.example.fungwahtools.activity.BaseActivity;
 import com.example.fungwahtoolsdemo.R;
@@ -13,19 +12,15 @@ import com.example.fungwahtoolsdemo.R;
  * Created by FungWah on 2017/9/21.
  */
 
-public class FadeActivity extends BaseActivity {
-
-    private TextView tv;
+public class ExplodeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setEnterTransition(new Fade());
+            getWindow().setEnterTransition(new Explode());
         }
         setContentView(getLayoutId());
-        initView();
-        setView();
     }
 
     @Override
@@ -35,12 +30,12 @@ public class FadeActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        tv = findView(R.id.tv);
+
     }
 
     @Override
     protected void setView() {
-        tv.setText("FadeActivity");
+
     }
 
     @Override

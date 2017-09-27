@@ -9,6 +9,7 @@ import com.example.fungwahtoolsdemo.R;
 import com.example.fungwahtoolsdemo.animdemo.adapter.AnimFragmentAdapter;
 import com.example.fungwahtoolsdemo.animdemo.frament.Lollipop1Fragment;
 import com.example.fungwahtoolsdemo.animdemo.frament.Lollipop2Fragment;
+import com.example.fungwahtoolsdemo.animdemo.frament.Lollipop3Fragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ public class LollipopAnimationActivity extends BaseActivity {
     private TabLayout tabLayout;
     private List<BaseFragment> list = new ArrayList<>();
     private AnimFragmentAdapter adapter;
-    private static final String TAB_NAME[] = {"圆形遮盖", "转场动画", "ObjectAnimator_XML使用", "ObjectAnimator_PATH", "帧动画", "ObjectAnimator", "Tween7", "Tween8", "Tween9", "Tween10"};
+    private static final String TAB_NAME[] = {"圆形遮盖", "旧转场动画", "5.0转场动画", "ObjectAnimator_PATH", "帧动画", "ObjectAnimator", "Tween7", "Tween8", "Tween9", "Tween10"};
 
     @Override
     protected int getLayoutId() {
@@ -49,6 +50,7 @@ public class LollipopAnimationActivity extends BaseActivity {
 
     private void addList() {
         list.add(new Lollipop1Fragment());
+        list.add(new Lollipop3Fragment());
         list.add(new Lollipop2Fragment());
     }
 

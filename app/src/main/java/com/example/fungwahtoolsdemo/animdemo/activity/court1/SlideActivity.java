@@ -1,4 +1,4 @@
-package com.example.fungwahtoolsdemo.animdemo.activity;
+package com.example.fungwahtoolsdemo.animdemo.activity.court1;
 
 import android.os.Build;
 import android.os.Bundle;

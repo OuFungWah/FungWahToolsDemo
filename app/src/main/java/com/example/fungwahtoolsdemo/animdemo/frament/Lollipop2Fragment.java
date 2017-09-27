@@ -12,10 +12,10 @@ import android.widget.TextView;
 import com.example.fungwahtools.fragment.BaseFragment;
 import com.example.fungwahtools.util.ToastUtil;
 import com.example.fungwahtoolsdemo.R;
-import com.example.fungwahtoolsdemo.animdemo.activity.ExplodeActivity;
-import com.example.fungwahtoolsdemo.animdemo.activity.FadeActivity;
-import com.example.fungwahtoolsdemo.animdemo.activity.ShareActivity;
-import com.example.fungwahtoolsdemo.animdemo.activity.SlideActivity;
+import com.example.fungwahtoolsdemo.animdemo.activity.court1.ExplodeActivity;
+import com.example.fungwahtoolsdemo.animdemo.activity.court1.FadeActivity;
+import com.example.fungwahtoolsdemo.animdemo.activity.court1.ShareActivity;
+import com.example.fungwahtoolsdemo.animdemo.activity.court1.SlideActivity;
 
 /**
  * Created by FungWah on 2017/9/21.
@@ -72,6 +72,7 @@ public class Lollipop2Fragment extends BaseFragment implements View.OnClickListe
                 break;
             case R.id.fade_btn:
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(getActivity());
                     startActivity(new Intent(getContext(), FadeActivity.class), ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 }else{
                     ToastUtil.showShort("请换一个机型再试");
