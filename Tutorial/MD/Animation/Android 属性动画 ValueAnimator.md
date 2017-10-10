@@ -67,7 +67,7 @@ Android 的属性动画就和它的名字一样，通过辅助类演算数值的
 #### 1）新建 Animator 文件夹
 在 res 文件夹下新建一个 animator 文件夹
 
-![](src/animator文件夹.jpg)
+![](picture/pic2.jpg)
 #### 2）新建一个对应的animator动画xml文件
 ```xml
 

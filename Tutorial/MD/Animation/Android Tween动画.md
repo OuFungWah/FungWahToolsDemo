@@ -4,9 +4,11 @@
 ## 一、基本用法：
 
 ### 1）先为项目创建一个Animation的资源文件夹：
-![](src/anim文件夹.jpg)
+
+![](picture/pic1.jpg)
+
 ### 2）在anim文件夹里面新建动画资源.xml文件
-这里引用Google的实例代码，文件名为：<br/>
+这里引用Google的实例代码，文件名为：<br/><br/>
 hyperspace_jump.xml
 ```xml
 <!-- set 动画动作的集合 -->
