@@ -30,7 +30,9 @@ public class Tween1Fragment extends BaseFragment implements View.OnClickListener
     protected void initView(View parent) {
         imageView = findView(R.id.tween_img);
         floatingActionButton = findView(R.id.fab);
+        //加载动画XML
         disappearAnim = AnimationUtils.loadAnimation(getContext(), R.anim.tween_disappear);
+        //加载动画XML
         appearAnim = AnimationUtils.loadAnimation(getContext(), R.anim.tween_appear);
     }
 
@@ -49,9 +51,11 @@ public class Tween1Fragment extends BaseFragment implements View.OnClickListener
         switch (v.getId()) {
             case R.id.fab:
                 if (flag) {
+                    //开始动画
                     imageView.startAnimation(appearAnim);
                     flag = !flag;
                 } else {
+                    //开始动画
                     imageView.startAnimation(disappearAnim);
                     flag = !flag;
                 }

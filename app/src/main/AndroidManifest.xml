@@ -28,6 +28,7 @@
         <activity android:name=".animdemo.activity.court1.ShareActivity"/>
 
         <activity android:name=".animdemo.activity.court2.TweenTestAnimActivity"/>
+        <activity android:name=".animdemo.activity.court2.VisibilityTestActivity"/>
 
     </application>
 

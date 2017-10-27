@@ -49,6 +49,7 @@ public class Value1Fragment extends BaseFragment implements View.OnClickListener
         tv3 = findView(R.id.tv3);
         tv4 = findView(R.id.tv4);
         fab = findView(R.id.fab_right);
+        //注册一个值变更器
         valueAnimator1 = ValueAnimator.ofFloat(0, 360);
         valueAnimator2 = ValueAnimator.ofFloat(0, 360);
         valueAnimator3 = ValueAnimator.ofFloat(0, 360);
@@ -61,18 +62,22 @@ public class Value1Fragment extends BaseFragment implements View.OnClickListener
         tv2.setText("先快后慢");
         tv3.setText("动画时间增长1秒");
         tv4.setText("旋转角度缩小180");
+        //设置时间
         valueAnimator1.setDuration(1000);
         valueAnimator2.setDuration(1000);
         valueAnimator3.setDuration(2000);
         valueAnimator4.setDuration(1000);
+        //设置变速器
         valueAnimator1.setInterpolator(new AccelerateInterpolator());
         valueAnimator2.setInterpolator(new DecelerateInterpolator());
         valueAnimator3.setInterpolator(new AccelerateInterpolator());
         valueAnimator4.setInterpolator(new AccelerateInterpolator());
+        //设置重复次数
         valueAnimator1.setRepeatCount(Integer.MAX_VALUE);
         valueAnimator2.setRepeatCount(Integer.MAX_VALUE);
         valueAnimator3.setRepeatCount(Integer.MAX_VALUE);
         valueAnimator4.setRepeatCount(Integer.MAX_VALUE);
+        //设置重复的模式
         valueAnimator1.setRepeatMode(ValueAnimator.REVERSE);
         valueAnimator2.setRepeatMode(ValueAnimator.REVERSE);
         valueAnimator3.setRepeatMode(ValueAnimator.REVERSE);
