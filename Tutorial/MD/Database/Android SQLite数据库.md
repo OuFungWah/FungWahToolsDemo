@@ -715,3 +715,4 @@ class MainActivity extends AppCompatActivity{
 ```
 
 ## 总结：
+数据库的操作在Android里面举足轻重，一个好的数据库操作类的封装可以省去很多不必要的麻烦
