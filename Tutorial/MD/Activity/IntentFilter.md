@@ -56,9 +56,3 @@ category的匹配原则为：。当intent中有intent可以不携带category的�
 组件 | 意义 | 内容
 --- | --- | ---
 scheme|URI的模式|http、file、content
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
