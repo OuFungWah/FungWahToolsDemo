@@ -14,4 +14,4 @@
 ### 2.[Android数据库笔记](https://github.com/OuFungWah/FungWahToolsDemo/tree/master/Tutorial/MD/Database)  
 * [Android SQLite数据库](https://github.com/OuFungWah/FungWahToolsDemo/blob/master/Tutorial/MD/Database/Android%20SQLite%E6%95%B0%E6%8D%AE%E5%BA%93.md)
 ### 其他笔记
-  * [上传自己的依赖库到Jcenter（从0开始，简单版）](https://github.com/OuFungWah/FungWahToolsDemo/blob/master/Tutorial/MD/Jcenter/%E4%B8%8A%E4%BC%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BE%9D%E8%B5%96%E5%BA%93.md#%E4%B8%8A%E4%BC%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BE%9D%E8%B5%96%E5%BA%93%E5%88%B0jcenter%E4%BB%8E0%E5%BC%80%E5%A7%8B%E7%AE%80%E5%8D%95%E7%89%88)
+* [上传自己的依赖库到Jcenter（从0开始，简单版）](https://github.com/OuFungWah/FungWahToolsDemo/blob/master/Tutorial/MD/Jcenter/%E4%B8%8A%E4%BC%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BE%9D%E8%B5%96%E5%BA%93.md#%E4%B8%8A%E4%BC%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BE%9D%E8%B5%96%E5%BA%93%E5%88%B0jcenter%E4%BB%8E0%E5%BC%80%E5%A7%8B%E7%AE%80%E5%8D%95%E7%89%88)
