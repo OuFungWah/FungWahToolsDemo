@@ -39,6 +39,7 @@
 **那么Android中有多少组件是Context呢？**
 
 我们来看一下`Context`的类关系图
+
 ![Context类关系图](https://github.com/OuFungWah/FungWahToolsDemo/blob/master/Tutorial/Picture/Context.png)
 
 眼厉的小伙伴应该就看到了熟悉的身影了：`Application`、`Service`和`Activity`。这些都是`Context`，由`Android`系统负责创建的，我们能做的只是提醒`Android`系统我们要用到什么`Context`了，然后系统负责创建。其中的`Application`对象是唯一的，一个应用只有一个`Application`对象
