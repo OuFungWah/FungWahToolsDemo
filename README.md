@@ -6,6 +6,7 @@
 ## MD对应目录
 ### 1. [Android Context笔记]()
 * [Android Activity总结](https://github.com/OuFungWah/FungWahToolsDemo/blob/master/Tutorial/MD/Activity/Android%20Activity%E6%80%BB%E7%BB%93.md)
+* [Android Activity显式调用与隐式调用](https://github.com/OuFungWah/FungWahToolsDemo/blob/master/Tutorial/MD/Activity/Android%20Activity%E6%98%BE%E5%BC%8F%E8%B0%83%E7%94%A8%E4%B8%8E%E9%9A%90%E5%BC%8F%E8%B0%83%E7%94%A8.md)
 * [Android Context.md](https://github.com/OuFungWah/FungWahToolsDemo/blob/master/Tutorial/MD/Activity/Android%20Context.md)
 
 ### 2. [Android动画笔记](https://github.com/OuFungWah/FungWahToolsDemo/tree/master/Tutorial/MD/Animation) 
